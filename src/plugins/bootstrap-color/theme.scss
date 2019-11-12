@@ -1,0 +1,18 @@
+// Variables
+$border-radius: 0 !default;
+$border-radius-sm: 0 !default;
+$border-radius-lg: 0 !default;
+
+// Variables end: Import Bootstrap-Color & Bootstrap
+
+@import '~bootstrap-color/dist/abaculus/begin';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-color/dist/abaculus/end';
+
+// Custom overrides
+@import './sidebar';
+
+button:focus,
+.btn:focus {
+  outline: none;
+}
