@@ -1,6 +1,6 @@
 # bootstrap-color-demo-vue
 
-Using bootstrap color with Vuejs
+Using [bootstrap-color](https://github.com/bum/bootstrap-color.git) with Vuejs
 
 Checkout project and customize color theme on `src/plugins/bootstrap-color/theme.scss`
 
