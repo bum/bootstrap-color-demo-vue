@@ -7,15 +7,10 @@
 </template>
 
 <script>
-import { ColorThemes, switchTheme, activeTheme } from '@/plugins'
-import { computed, watch } from '@vue/composition-api'
+import { ColorThemes, activeTheme } from '@/plugins'
+import { computed } from '@vue/composition-api'
 export default {
   setup() {
-    watch(
-      () => activeTheme.value,
-      () => switchTheme(),
-      { lazy: true }
-    )
     return { activeTheme, ColorThemes: computed(() => ColorThemes) }
   },
 }

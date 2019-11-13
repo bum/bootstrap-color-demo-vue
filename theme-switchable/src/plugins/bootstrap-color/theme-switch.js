@@ -1,12 +1,18 @@
-import { ref } from '@vue/composition-api'
+import { ref, watch } from '@vue/composition-api'
 
 export const ColorThemes = 'abaculus backstay bubblegum business-tycoon cable cerulean charming cosmo cyborg dalton darkly daydream ectype executive-suite ferula flatly good-news growth harbor hello-world journal litera lumen lux materia minty neon-glow pleasant pulse retro sandstone simplex sketchy slate solar spacelab superhero united vibrant-sea wizardry yeti'.split(
   ' '
 )
 
-export const activeTheme = ref('abaculus')
 const ColorThemesUrl = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bs4-abaculus.css'
 const ColorThemesUrlMin = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bs4-abaculus.min.css'
+
+export const activeTheme = ref('abaculus')
+watch(
+  () => activeTheme.value,
+  () => switchTheme(),
+  { lazy: true }
+)
 
 // use activeTheme if no "theme" provided
 export function themeCssUrl(min, theme) {
@@ -17,10 +23,8 @@ export function themeCssUrl(min, theme) {
 export function switchTheme(theme) {
   const cssUrl = themeCssUrl(true, theme)
 
-  const oldlink = document.getElementById('ThemeSwitch')
-
   const newlink = document.createElement('link')
-  newlink.setAttribute('id', 'ThemeSwitch')
+  newlink.setAttribute('class', 'ThemeSwitch')
   newlink.setAttribute('rel', 'stylesheet')
   newlink.setAttribute('type', 'text/css')
   newlink.setAttribute('href', cssUrl)
@@ -29,13 +33,23 @@ export function switchTheme(theme) {
   head.appendChild(newlink)
 
   // make sure new css loaded before unload previous one
-  if (oldlink) onloadCSS(newlink, () => head.removeChild(oldlink))
+  onloadCSS(newlink, keepOnlyLatestLink)
+}
+
+function keepOnlyLatestLink() {
+  const head = document.getElementsByTagName('head').item(0)
+  const oldlinks = document.getElementsByClassName('ThemeSwitch')
+  if (oldlinks.length <= 1) return
+  for (let i = 0; i < oldlinks.length - 1; ++i) {
+    head.removeChild(oldlinks[i])
+  }
 }
 
 // author: https://github.com/filamentgroup/loadCSS/blob/master/src/onloadCSS.js
 function onloadCSS(ss, callback) {
-  let called
+  let called, timeout
   function newcb() {
+    if (timeout) clearTimeout(timeout)
     if (!called && callback) {
       called = true
       callback.call(ss)
@@ -61,5 +75,6 @@ function onloadCSS(ss, callback) {
     ss.onloadcssdefined(newcb)
   }
 
-  // TODO setTimeout 5s mà chưa gọi callback tự gọi luôn
+  // TODO setTimeout auto call newcb if not
+  timeout = setTimeout(newcb, 3000)
 }
