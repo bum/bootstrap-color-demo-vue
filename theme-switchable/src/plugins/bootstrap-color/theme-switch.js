@@ -4,8 +4,8 @@ export const ColorThemes = 'abaculus backstay bubblegum business-tycoon cable ce
   ' '
 )
 
-const ColorThemesUrl = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bs4-abaculus.css'
-const ColorThemesUrlMin = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bs4-abaculus.min.css'
+const ColorThemesUrl = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bootstrap-color.css'
+const ColorThemesUrlMin = 'https://cdn.jsdelivr.net/npm/bootstrap-color/dist/abaculus/bootstrap-color.min.css'
 
 export const activeTheme = ref('abaculus')
 watch(
