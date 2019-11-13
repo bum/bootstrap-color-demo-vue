@@ -34,6 +34,8 @@ export function switchTheme(theme) {
 
   // make sure new css loaded before unload previous one
   onloadCSS(newlink, keepOnlyLatestLink)
+
+  saveLatestActiveTheme()
 }
 
 function keepOnlyLatestLink() {
@@ -44,6 +46,17 @@ function keepOnlyLatestLink() {
     head.removeChild(oldlinks[i])
   }
 }
+
+const LAST_ACTIVE_THEME = 'LAST_ACTIVE_THEME'
+
+export function saveLatestActiveTheme() {
+  localStorage.setItem(LAST_ACTIVE_THEME, activeTheme.value)
+}
+
+(function () {
+  const lastActiveTheme = localStorage.getItem(LAST_ACTIVE_THEME)
+  if (lastActiveTheme) activeTheme.value = lastActiveTheme
+}())
 
 // author: https://github.com/filamentgroup/loadCSS/blob/master/src/onloadCSS.js
 function onloadCSS(ss, callback) {
