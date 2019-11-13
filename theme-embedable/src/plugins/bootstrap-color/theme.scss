@@ -14,9 +14,9 @@ button:focus,
 /* change theme name from both lines of "begin" & "end" with following name: 
 abaculus backstay bubblegum business-tycoon cable cerulean charming cosmo cyborg dalton darkly daydream ectype executive-suite ferula flatly good-news growth harbor hello-world journal litera lumen lux materia minty neon-glow pleasant pulse retro sandstone simplex sketchy slate solar spacelab superhero united vibrant-sea wizardry yeti
 */
-@import '~bootstrap-color/dist/bubblegum/begin';
+@import '~bootstrap-color/dist/abaculus/begin';
 @import '~bootstrap/scss/bootstrap';
-@import '~bootstrap-color/dist/bubblegum/end';
+@import '~bootstrap-color/dist/abaculus/end';
 
 // Custom overrides
 @import './app';
