@@ -1,0 +1,22 @@
+// sample for page style without import bootstrap-theme into project
+
+button:focus,
+.btn:focus {
+  outline: none;
+}
+
+// Variables example
+// $border-radius: 0 !default;
+// $border-radius-sm: 0 !default;
+// $border-radius-lg: 0 !default;
+
+// Variables end: Import Bootstrap-Color & Bootstrap
+/* change theme name from both lines of "begin" & "end" with following name: 
+abaculus backstay bubblegum business-tycoon cable cerulean charming cosmo cyborg dalton darkly daydream ectype executive-suite ferula flatly good-news growth harbor hello-world journal litera lumen lux materia minty neon-glow pleasant pulse retro sandstone simplex sketchy slate solar spacelab superhero united vibrant-sea wizardry yeti
+*/
+@import '~bootstrap-color/dist/bubblegum/begin';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-color/dist/bubblegum/end';
+
+// Custom overrides
+@import './app';
