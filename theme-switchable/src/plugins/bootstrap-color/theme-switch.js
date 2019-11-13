@@ -60,4 +60,6 @@ function onloadCSS(ss, callback) {
   if ('isApplicationInstalled' in navigator && 'onloadcssdefined' in ss) {
     ss.onloadcssdefined(newcb)
   }
+
+  // TODO setTimeout 5s mà chưa gọi callback tự gọi luôn
 }
