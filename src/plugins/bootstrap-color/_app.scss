@@ -1,5 +1,10 @@
-$sidebar-width: 10rem;
+button:focus,
+.btn:focus {
+  outline: none;
+}
 
+// Sidebar
+$sidebar-width: 10rem;
 .sidebar {
   width: $sidebar-width;
   position: relative;

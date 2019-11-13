@@ -10,9 +10,4 @@
 @import '~bootstrap-color/dist/abaculus/end';
 
 // Custom overrides
-@import './sidebar';
-
-button:focus,
-.btn:focus {
-  outline: none;
-}
+@import './app';

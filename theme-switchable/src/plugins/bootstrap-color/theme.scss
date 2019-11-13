@@ -1,0 +1,6 @@
+// sample for page style without import bootstrap-theme into project
+
+button:focus,
+.btn:focus {
+  outline: none;
+}
