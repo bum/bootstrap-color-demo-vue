@@ -1,5 +1,7 @@
 # theme-switchable
 
+Demo web at [boostrap-color/theme-switchable](https://bum.github.io/bootstrap-color/theme-switchable/)
+
 ## Project setup
 ```
 yarn install
