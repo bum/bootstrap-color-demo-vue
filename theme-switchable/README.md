@@ -1,6 +1,8 @@
 # theme-switchable
 
-Demo web at [boostrap-color/theme-switchable](https://bum.github.io/bootstrap-color/theme-switchable/)
+Using [bootstrap-color](https://github.com/bum/bootstrap-color.git) with Vuejs
+
+Demo: [theme-switchable](https://bum.github.io/bootstrap-color/theme-switchable/)
 
 ## Project setup
 ```
@@ -15,11 +17,6 @@ yarn serve
 ### Compiles and minifies for production
 ```
 yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
 ```
 
 ### Customize configuration
